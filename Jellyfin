@@ -7,6 +7,6 @@ services:
     ports:
       - "8096:8096"
     volumes:
-      - /home/walli/.docker/jellyfin/config:/config
-      - /home/walli/multimedia:/media
+      - $HOME/.docker/jellyfin/config:/config
+      - $HOME/multimedia:/media
       

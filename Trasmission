@@ -9,9 +9,9 @@ services:
       - PGID=1000
       - TZ=America/Argentina/Buenos_Aires
     volumes:
-      - /home/walli/.docker/trasmission/temp:/mnt/transmission/temp
-      - /home/walli/.docker/trasmission/config:/config
-      - /home/walli/descargas:/downloads
+      - $HOME/.docker/.docker/trasmission/temp:/mnt/transmission/temp
+      - $HOME/.docker/.docker/trasmission/config:/config
+      - $HOME/descargas:/downloads
     ports:
       - 9091:9091      
       - 51413:51413
