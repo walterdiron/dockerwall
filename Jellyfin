@@ -1,12 +1,17 @@
-version: '3'
+version: "3.9"
 services:
   jellyfin:
     image: jellyfin/jellyfin:latest
     container_name: jellyfin
-    restart: always
+    restart: unless-stopped
     ports:
       - "8096:8096"
+      - "8920:8920"
     volumes:
-      - $HOME/.docker/jellyfin/config:/config
-      - $HOME/multimedia:/media
-      
+      - /srv/dev-disk-by-uuid-593DB16D5E17C4FA/.docker/jellyfin/config:/config
+      - /srv/dev-disk-by-uuid-593DB16D5E17C4FA/multimedia/peliculas:/movies
+      - /srv/dev-disk-by-uuid-593DB16D5E17C4FA/multimedia/series:/tvshows
+      - /srv/dev-disk-by-uuid-593DB16D5E17C4FA/multimedia/musica:/music
+    environment:
+      - TZ=America/Argentina/Buenos_Aires
+    network_mode: bridge

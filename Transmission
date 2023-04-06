@@ -9,9 +9,9 @@ services:
       - PGID=1000
       - TZ=America/Argentina/Buenos_Aires
     volumes:
-      - $HOME/.docker/.docker/trasmission/temp:/mnt/transmission/temp
-      - $HOME/.docker/.docker/trasmission/config:/config
-      - $HOME/descargas:/downloads
+      - /srv/dev-disk-by-uuid-593DB16D5E17C4FA/.docker/.docker/trasmission/temp:/mnt/transmission/temp
+      - /srv/dev-disk-by-uuid-593DB16D5E17C4FA/.docker/.docker/trasmission/config:/config
+      - /srv/dev-disk-by-uuid-593DB16D5E17C4FA/descargas:/downloads
     ports:
       - 9091:9091      
       - 51413:51413
