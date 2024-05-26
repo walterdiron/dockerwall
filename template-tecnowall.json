@@ -1,0 +1,36 @@
+{
+  "version": "2",
+  "services": {
+    "transmission": {
+      "image": "linuxserver/transmission",
+      "container_name": "transmission",
+      "environment": {
+        "PUID": "1000",
+        "PGID": "1000",
+        "TZ": "America/Argentina/Buenos_Aires"
+      },
+      "volumes": [
+        "/home/walli/.docker_config/trasmission/config:/config",
+        "/home/walli/Descargas:/downloads"
+      ],
+      "ports": {
+        "9001": "9091"
+      },
+      "restart": "unless-stopped",
+      "labels": {
+        "io.portainer.labels.logo": "https://ruta-al-logo/transmission.png"
+      }
+    },
+    "metube": {
+      "image": "ghcr.io/alexta69/metube",
+      "container_name": "metube",
+      "restart": "unless-stopped",
+      "ports": {
+        "9010": "8081"
+      },
+      "volumes": [
+        "/home/walli/Descargas:/downloads"
+      ]
+    }
+  }
+}
