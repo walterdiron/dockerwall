@@ -7,8 +7,8 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - /srv/dev-disk-by-uuid-593DB16D5E17C4FA/.docker/portainer/docker.sock:/var/run/docker.sock
-      - /srv/dev-disk-by-uuid-593DB16D5E17C4FA/.docker/portainer/portainer_data:/data
+      - /home/$USER/.docker_config/portainer/docker.sock:/var/run/docker.sock
+      - /home/$USER/.docker_config/.docker/portainer/portainer_data:/data
     environment:
       - TZ=America/Argentina/Buenos_Aires
 volumes:
