@@ -9,9 +9,9 @@ services:
       - PGID=1000
       - TZ=America/Argentina/Buenos_Aires
     volumes:
-      - /srv/dev-disk-by-uuid-593DB16D5E17C4FA/.docker/trasmission/temp:/mnt/transmission/temp
-      - /srv/dev-disk-by-uuid-593DB16D5E17C4FA/.docker/trasmission/config:/config
-      - /srv/dev-disk-by-uuid-593DB16D5E17C4FA/descargas:/downloads
+      - /home/walli/.docker_config/trasmission/temp:/mnt/transmission/temp
+      - /home/walli/.docker_config/trasmission/config:/config
+      - /home/walli/Descargas:/downloads
     ports:
       - 9091:9091      
       - 51413:51413
